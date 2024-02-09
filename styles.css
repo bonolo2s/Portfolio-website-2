@@ -1,0 +1,535 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+body{
+    background-image: url(assets/background1.webp);
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+h1{
+    color: white;
+}
+h2{
+    color: white;
+}
+h3{
+    color: white;
+}
+#about,#skills,#portfolio,#reviews,#contact{
+    padding: 6% 5% 0;
+    min-height: 100vh;/*
+    background-color: aliceblue;*/
+}
+p{
+    font-size: 18px;
+    color: white;
+}
+.btn{
+    background-color: rgb(61, 134, 199);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    transition: all 0.5s ease;
+}
+.btn:hover{
+    background-color: rgb(20, 90, 182);
+}
+
+
+/*Navbar styles*/
+header{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 100000000000;
+}
+nav{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding:1% 5%;
+    background-color: rgb(61, 134, 199);
+}
+.logo{
+    width: 130px;
+}
+.navLinkscontainer{
+    display: flex;
+    justify-content: space-between;
+    animation: slideLinks 1s ease;
+}
+.navLinkscontainer li{
+    list-style: none;
+    margin: 0 5px;
+}
+
+.navLinkscontainer li a{
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    transition: all 0.5s ease;
+}
+.navLinkscontainer li a:hover{
+    color: rgb(15, 126, 223);/*ill need that thing og before*/
+}
+.hidden-nav-container{
+    display: none;
+}
+.menuIcon{
+    display: none;
+    font-size: 2rem;
+}
+
+/*HOME STYLES*/
+#home{
+    padding: 8% 5%;/*
+    background-color: aliceblue;
+    min-height: 100vh;*/
+
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#intro{
+    width: 65%;
+    margin: 0 auto;
+}
+.txtIntro p{
+    text-align: left;
+    font-size: 20px;
+    margin: 30px 0;
+    animation: slideIn 2s ease forwards; 
+    z-index: 0;
+}
+
+#intro h2{
+    color: white;
+    font-size: 80px;
+    animation: slideRight 2s ease  forwards ;
+}
+#intro h2:nth-of-type(2){
+    animation: slideLeft 2s ease forwards;
+}
+
+h3{
+    color: white;
+    font-size: 40px;
+    animation: slideUp 1s ease forwards;
+}
+h3:nth-of-type(2){
+    animation: slideBottom 1s ease forwards;
+}
+
+.roles{
+    color: rgb(13, 70, 119);
+}
+
+.learnMoreBtn{
+    padding: 10px 20px;
+    background-color: rgb(17, 126, 221);
+    border-radius: 5px ;
+    border: none;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+.learnMoreBtn:hover{
+    background-color: rgb(0, 95, 179);
+    padding: 10px 20px;
+}
+.arrowDown{
+    text-align: start;
+    margin: 30px 0;
+    animation: Float 2s ease  infinite forwards;
+}
+
+/*About styles*/
+.about-container{
+    display: flex;/*
+    transform: translateX(-100%);*/
+}
+.about-container div{
+    flex: 1;
+    margin: 10px;
+    opacity: 0;
+
+}
+.about-container div:nth-of-type(1){
+    animation: slideFromBtm 1s ease forwards;
+    animation-timeline: view();
+    animation-range-start: 50px;
+    animation-range-end: 500px;
+
+}
+.about-container div:nth-of-type(2){
+    animation: slideFromBtm 1s ease forwards;
+    animation-timeline: view();
+    animation-range-start: 180px;
+    animation-range-end: 500px;
+
+}
+.myImg{
+    width: 250px;
+    border-radius: 10px;
+}
+
+
+/*Skills styles*/
+.skills-container{
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 100px;
+}
+.skillItem{
+    width: 30%;
+}
+.skillImg{
+    width: 100%;
+}
+.skillsRow{
+    display: flex;
+    justify-content: center;
+}
+.skillsCol{
+    background-color: grey;
+    margin: 15px 25px;
+    padding: 40px;
+    border-radius: 10px;
+    min-height: 250px;
+    width: 250px;
+}
+.skillsCol h2{
+    color: black;
+    font-size: 2rem;
+}
+.skillsCol p{
+    color: black;
+    font-size: 18px;
+}
+
+/*Portfolio styles*/
+.portfolio-container{
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    animation: slideFromBtm 1s ease forwards;
+    animation-timeline: view();
+    animation-range-start: 100px;
+    animation-range-end: 500px;
+}
+.slider{
+    width: 1000px;
+    height: 450px;
+    display: flex;
+    overflow-x: scroll;
+}
+.sliderItem{
+    min-width: 350px;
+    margin: 15px;
+    position: relative;
+}
+.sliderItem h2{
+    color: black;
+    font-size: 2rem;
+}
+.hidden-description{
+    background-color: rgb(175, 144, 224);
+    opacity: 0.8;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 28px;
+    text-align: center;
+    transition: all 0.5s ease;
+}
+.hidden-description p{
+    font-size: 18px;
+    color: black;
+}
+.sliderItem:hover>.hidden-description{
+    height: 82%;
+    opacity: 1;
+    transition: all 0.5s ease;
+}
+.FloatingArrow{
+    font-size: 30px;
+    color: black;
+    animation: Float 2s ease  infinite forwards;
+}
+.portfolioImg{
+    width: 100%;
+    border-radius: 5px;
+}
+
+/*Contact styles*/
+.contact-container{
+    display: flex;
+    align-items: center;
+}
+.contact-container div{
+    flex: 1;
+    margin: 0 20px;
+}
+.contactLinks{
+    color: black;
+    font-size: 30px;
+    background-color: rgb(61, 134, 199);
+    padding: 10px;
+    border-radius: 50%;
+    transition: all 0.5s ease;
+
+}
+.contactLinks:hover{
+    color: black;
+    font-size: 30px;
+    background-color: rgb(10, 69, 121);
+    padding: 10px;
+    border-radius: 50%;
+
+}
+.contactDetails{
+    text-align: start;
+}
+.contactDetails div{
+    margin: 10px;
+}
+
+
+/*RESPONSIVENESS*/
+@media (max-width:600px) {
+    /*Navbar styles*/
+    .logo{
+        width: 100px;
+    }
+    .navLinkscontainer{
+        display: none;
+    }
+    .menuIcon{
+        display: block;
+        transform: rotate(0);
+        transition: all 0.5s ease;
+    }
+    .menuIcon.open{
+        display: block;
+        transform: rotate(45deg);
+    }
+    .hidden-nav-container{
+        padding: 0 5%;
+        background-color: rgb(175, 144, 224);
+        height: 250px;
+        display: block;
+        height: 0;
+        overflow: hidden;
+        transition: all 0.5s ease;
+    }
+    .hidden-nav-container.open{
+        height: 250px;
+    }
+    .hidden-nav-container li{
+        list-style: none;
+        margin: 10px 0;
+    }
+    .hidden-nav-container li a{
+        text-decoration: none;
+        color: black;
+    }
+
+    /*HOME STYLES*/
+    #home{
+        padding: 100px 5% 0;
+        min-height: 100vh;
+    }
+    #intro{
+        width: 100%;
+    }
+
+    /*About styles*/
+    .about-container{
+        flex-direction: column;
+    }
+
+    /*Skills styles*/
+    .skills-container{
+        flex-direction: column;
+    }
+    .skillItem{
+        width: 100%;
+        margin: 20px 0;
+    }
+    .skillsRow{
+        flex-direction: column;
+    }
+    .skillsCol{
+        background-color: grey;
+        margin: 15px 0;
+        padding: 10px;
+        border-radius: 10px;
+        min-height: 250px;
+        width: 95%;
+    }
+
+    /*Contact styles*/
+    .contact-container{
+        flex-direction: column;
+    }
+    .contact-container div{
+        flex: 1;
+        margin: 20px 0;
+    }
+}
+
+@media (min-width:768px) {
+    /*HOME STYLES*/
+    #home{
+        padding: 40% 5%;
+    }
+
+    /*Portfolio styles*/
+    .skillsRow{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: start;
+    }
+    .skillsCol{
+        background-color: white;
+        margin: 15px 25px;
+        padding: 40px;
+        border-radius: 10px;
+        min-height: 250px;
+        width: 200px;
+    }
+}
+
+@media (min-width: 1000px) {
+    /*Portfolio styles*/
+    .skillsRow{
+        flex-wrap: nowrap;
+        justify-content: center;
+    }
+    .skillsCol{
+        background-color: grey;
+        margin: 15px 25px;
+        padding: 25px;
+        border-radius: 10px;
+        min-height: 250px;
+        width: 200px;
+    }
+}
+
+@media (min-width: 1200px) {
+    /*HOME STYLES*/
+    #home{
+        padding: 8% 5%;
+    }
+    /*Portfolio styles*/
+    .skillsCol{
+        background-color: grey;
+        margin: 15px 25px;
+        padding: 40px;
+        border-radius: 10px;
+        min-height: 250px;
+        width: 250px;
+    }
+}
+
+@media (min-width: 1400px) {
+    
+    /*HOME STYLES*/
+    #home{
+        padding: 14% 5%;
+    } 
+}
+
+/*KEY FRAMES*/
+@keyframes slideUp {
+    0% {
+      transform: translateY(-100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slideBottom {
+    0% {
+      transform: translateY(100px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slideRight {
+    0% {
+      transform: translateX(-500px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slideLeft {
+    0% {
+      transform: translateX(1000px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slideIn {
+    0%{
+        opacity: 0;
+        transform: translateX(+100%);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+  }
+  
+  @keyframes slideFromBtm {
+    0%{
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+  }
+
+  @keyframes slideLinks {
+    0%{
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+    
+  }
+
+  @keyframes Float {
+    0%{
+        transform: translateY(-10px);
+        opacity: 0.5;
+    }
+    50%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(10px);
+        opacity: 2;
+    }
+  }
