@@ -2,11 +2,14 @@
     margin: 0;
     padding: 0;
 
+
 }
 body{
-    background-image: url(assets/background1.webp);
+    background-image: url(assets/background12.jpg);
     background-attachment: fixed;
+    background-repeat: no-repeat;
     overflow-x: hidden;
+    overflow-y: scroll;
 }
 h1{
     color: white;
