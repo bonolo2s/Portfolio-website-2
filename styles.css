@@ -274,7 +274,7 @@ h3:nth-of-type(2){
     justify-content: center;
 }
 .reviews{
-    background-color: rgb(184, 193, 199);
+    background-color: rgb(192, 189, 182);
     width: 280px;
     border-radius: 10px;
     padding: 15px;
@@ -341,7 +341,7 @@ h3:nth-of-type(2){
         transition: all 0.5s ease;
     }
     .hidden-nav-container.open{
-        height: 250px;
+        height: 280px;
     }
     .hidden-nav-container li{
         list-style: none;
