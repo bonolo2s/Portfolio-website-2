@@ -15,8 +15,27 @@
         />
         <link rel="stylesheet" href="../styles.css">
         <style>
+            body{
+                padding: 5% 0 0;
+            }
             ul li{
                 list-style: none;
+            }
+            .swiper {
+                width: 450px;
+                height: 450px;
+                background-color:rgba(12, 12, 31, 0.774);
+                margin: 50px auto;
+                box-shadow: 10px 10px 10px 10px rgb(22, 22, 22);
+            }
+            @media (max-width: 600px) {
+                .swiper {
+                width: 300px;
+                height: 300px;
+                background-color:rgba(12, 12, 31, 0.774);
+                margin: 50px auto;
+                box-shadow: 10px 10px 10px 10px rgb(22, 22, 22);
+            }
             }
         </style>
 
@@ -60,23 +79,22 @@
         </header>
 
         <!--Service offered-->
-
         <div class="swiper">
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
-                <!-- Slides -->
-                <div class="swiper-slide" style="background-image: url(resources/Gift-website.webp);background-size: cover;" ></div>
-                <div class="swiper-slide" style="background-image: url(resources/Gifts\ side\ before.webp);;background-size: cover;" ></div>
-                <div class="swiper-slide" style="background-image: url(resources/Gifts\ side\ after.webp);;background-size: cover;" ></div>
-                ...
+              <!-- Slides -->
+              <div class="swiper-slide" style="background-image: url(../assets/Gift-website.webp);background-size: cover;" ></div>
+              <div class="swiper-slide" style="background-image: url(../assets/Gifts\ side\ before.webp);background-size: cover;" ></div>
+              <div class="swiper-slide" style="background-image: url(../assets/Gifts\ side\ after.webp);background-size: cover;" ></div>
+              ...
             </div>
             <!-- If we need pagination -->
             <div class="swiper-pagination"></div>
-            
+          
             <!-- If we need navigation buttons -->
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
-            
+          
             <!-- If we need scrollbar -->
             <div class="swiper-scrollbar"></div>
         </div>
@@ -145,12 +163,42 @@
             </ul>
         </div>
 
+        <footer style="text-align: center;padding: 15px 0;background-color: rgb(61, 134, 199);">
+            <p>©️ Designed and coded by Bonolo Selowa💗</p>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
         <script>
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+
             const menuIcon = document.querySelector('.menuIcon');
             menuIcon.addEventListener('click', function() {
                 const menuLinks = document.querySelector('.hidden-nav-container');
                 menuLinks.classList.toggle('open')
                 this.classList.toggle('open');
+            });
+
+            const swiper = new Swiper('.swiper', {
+            //Optional parameters
+            
+            //loop: true,
+
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+            },
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            // And if we need scrollbar
+            scrollbar: {
+                el: '.swiper-scrollbar',
+            },
             });
         </script>
 
