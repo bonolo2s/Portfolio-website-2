@@ -1,7 +1,13 @@
 var typed = new Typed(".roles",{
-    strings:["Software Developer.","Email Developer."],
+  strings: [
+    "Software Developer.",
+    "API & Backend Developer.",
+    "Cloud & DevOps Enthusiast.",
+    "End-to-End Solution Owner.",
+    "Infrastructure & Automation Specialist."
+  ],
     typeSpeed: 100,
-    backSpeed: 100,
+    backSpeed: 10,
     backDelay: 1000,
     loop: true
   })
